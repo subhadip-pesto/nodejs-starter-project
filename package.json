@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-starter-project",
+  "version": "1.0.0",
+  "description": "Starter template for nodejs rest api project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "restapi"
+  ],
+  "author": "Subhadip Majumder",
+  "license": "ISC"
+}
