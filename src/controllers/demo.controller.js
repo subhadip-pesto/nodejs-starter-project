@@ -1,7 +1,11 @@
-import Services from '../services';
+import { DemoService } from '../services';
+import Logger from '../utils/logger';
+
+const logger = Logger('demo.controller');
 
 const getDemos = async (req, res) => {
-  const demos = Services.DemoService.getAllDemos();
+  const demos = DemoService.getAllDemos();
+  logger.info(JSON.stringify(demos));
   res.send(demos);
 };
 
@@ -10,7 +14,7 @@ const getDemo = async (req, res) => {
     res.status(400).send({ message: 'id is required' });
     return;
   }
-  const demo = Services.DemoService.getDemoById(req.params.id);
+  const demo = DemoService.getDemoById(req.params.id);
   res.send(demo);
 };
 

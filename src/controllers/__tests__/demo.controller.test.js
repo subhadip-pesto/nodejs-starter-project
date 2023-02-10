@@ -1,5 +1,5 @@
 import { mockRequest, mockResponse } from '../../utils/interceptor';
-import Controllers from '..';
+import { DemoController } from '..';
 
 describe("Check method GET 'demo.controller' ", () => {
   it('should 200 and return demos ', async () => {
@@ -7,7 +7,7 @@ describe("Check method GET 'demo.controller' ", () => {
     req.params.id = 1;
     const res = mockResponse();
 
-    await Controllers.DemoController.getDemos(req, res);
+    await DemoController.getDemos(req, res);
 
     expect(res.send).toHaveBeenCalledTimes(1);
     expect(res.send.mock.calls.length).toBe(1);
@@ -21,7 +21,7 @@ describe("Check method GET 'demo.controller' ", () => {
     req.params.id = 'demo';
     const res = mockResponse();
 
-    await Controllers.DemoController.getDemo(req, res);
+    await DemoController.getDemo(req, res);
 
     expect(res.send).toHaveBeenCalledTimes(1);
     expect(res.send.mock.calls.length).toBe(1);
@@ -36,7 +36,7 @@ describe("Check method GET 'demo.controller' ", () => {
     req.params.id = null;
     const res = mockResponse();
 
-    await Controllers.DemoController.getDemo(req, res);
+    await DemoController.getDemo(req, res);
 
     expect(res.status).toHaveBeenCalledWith(400);
     expect(res.send).toHaveBeenCalledWith({ message: 'id is required' });

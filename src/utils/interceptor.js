@@ -13,3 +13,9 @@ export const mockResponse = () => {
   return res;
 };
 // mockNext: () => jest.fn()
+
+export const mockLoggerFunction = () => {
+  return {
+    info: jest.fn().mock(),
+  };
+};
